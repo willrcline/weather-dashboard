@@ -1,0 +1,25 @@
+#results {
+    background-color: lightsalmon;
+}
+
+header {
+    background-color: lightseagreen;
+}
+
+body, header{
+    padding: 0%;
+    margin: 0%;
+}
+
+#search {
+    background-color: lightyellow;
+}
+
+h1 {
+    text-align: center;
+}
+/* 
+body {
+    display: flex;
+
+} */
