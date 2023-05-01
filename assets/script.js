@@ -1,11 +1,3 @@
-//! callWeatherAPI(s)
-//! ToDo: render today forecast
-//! ToDo: render each 5 day forecast box
-//! ToDo: handleSearchButton
-//! ToDo: addCityToLocalStorage
-//! ToDo: renderSearchHistory
-
-
 var openWeatherApiKey = "d9118cbb4158fd9329630940a9074c07"
 
 async function getCoordsForZipCode(zipCode) {
@@ -37,13 +29,6 @@ function renderToday(data) {
 
     var div = $('<div>')
     var header = $('<h3>').text(`Today in ${data.name}`)
-    
-    // var ul = $("<ul>")
-    // var description = $("<li>").text(data.weather[0].description)
-    // // var iconImg = $("<img>")
-    // var temp = $("<li>").text(day.main.temp)
-    // var wind = $("<li>").text(day.wind.speed)
-    // var humidity = $("<li>").text(day.main.humidity)
     var ul = createUlWithDayData(data)
     div.append(header, ul)
     todaySection.append(div)
@@ -125,7 +110,6 @@ async function searchAndRender(zipCode) {
     var todayWeatherData = await callTodayWeatherApi(coordinates.lat, coordinates.lon)
     console.log(todayWeatherData)
     var city = forecast5Data.city.name
-    // // console.log(zipCode, city)
     addLocationToLocalStorage(zipCode, city)
     renderSearchHistory()
     renderToday(todayWeatherData)
@@ -141,12 +125,5 @@ $("#search-history").on("click", "ul li", (e)=>{
     searchAndRender(zipCode)
 })
 
-// localStorage.setItem("locationList", JSON.stringify([]))
-// var locationList = JSON.parse(localStorage.getItem("locationList"))
-// locationList.unshift({zipCode:"78751", city:"Austin"})
-// localStorage.setItem("locationList", JSON.stringify(locationList))
-
-// console.log(getLocationListFromLocalStorage())
-// localStorage.removeItem("locationList")
 renderSearchHistory()
 
