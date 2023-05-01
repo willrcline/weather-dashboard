@@ -1,3 +1,13 @@
+/* font-family: 'Fira Sans', sans-serif;
+font-family: 'Martel', serif;
+font-family: 'Taviraj', serif; */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 #results {
     background-color: lightsalmon;
 }
@@ -6,9 +16,8 @@ header {
     background-color: lightseagreen;
 }
 
-body, header{
-    padding: 0%;
-    margin: 0%;
+body {
+    font-family: 'Martel', serif;
 }
 
 #search {
@@ -16,7 +25,16 @@ body, header{
 }
 
 h1 {
+    font-family: 'Fira Sans', sans-serif;
     text-align: center;
+}
+
+h2, h3 {
+    font-family: 'Taviraj', serif;
+}
+
+ul {
+    list-style: none;
 }
 /* 
 body {
